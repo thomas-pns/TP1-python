@@ -21,3 +21,14 @@ def days_in_month(month, year):
         return 31
     else:
         return 30
+
+def is_date_valid(day, month, year):
+    assert isinstance(day,int) and isinstance(month,int) and isinstance(year,int), "Le jour, le mois et l'année doivent être des nombres entiers"
+    assert month>=1 and month<=12, "le mois doit être un nombre entier compris entre 1 et 12"
+    assert day>=1 and day<=31, "le jour doit être un nombre entier compris entre 1 et 31"
+
+    max_day=days_in_month(month,year)
+    if day <= max_day:
+        return True
+    else:
+        return False
