@@ -6,3 +6,4 @@ import fonctions
 
 # print(fonctions.is_date_valid(29,2,2027))
 
+print(fonctions.mesImpots(50000))
