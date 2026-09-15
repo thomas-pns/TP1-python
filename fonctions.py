@@ -32,3 +32,17 @@ def is_date_valid(day, month, year):
         return True
     else:
         return False
+
+def mesImpots(salaire):
+    assert isinstance(salaire,int) and salaire>=0, "Le salaire doit être un nombre entier positif"
+    impot=0
+    if salaire >= 11601 and salaire <= 29579:
+        impot = (salaire - 11601) * 0.11
+    elif salaire >= 29580 and salaire <= 84577:
+        print((salaire - 29580) * 0.30, (29579 - 11601) * 0.11)
+        impot = (salaire - 29580) * 0.30 + (29579 - 11601) * 0.11
+    elif salaire >= 84578 and salaire <= 181917:
+        impot = (salaire - 84578) * 0.41 + (84577 - 29580) * 0.30 + (29579 - 11601) * 0.11
+    elif salaire >= 181918:
+        impot = (salaire - 181918) * 0.45 + (181917 - 84578) * 0.41 + (84577 - 29580) * 0.30 + (29579 - 11601) * 0.11
+    return int(impot)
