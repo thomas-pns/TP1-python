@@ -39,7 +39,6 @@ def mesImpots(salaire):
     if salaire >= 11601 and salaire <= 29579:
         impot = (salaire - 11601) * 0.11
     elif salaire >= 29580 and salaire <= 84577:
-        print((salaire - 29580) * 0.30, (29579 - 11601) * 0.11)
         impot = (salaire - 29580) * 0.30 + (29579 - 11601) * 0.11
     elif salaire >= 84578 and salaire <= 181917:
         impot = (salaire - 84578) * 0.41 + (84577 - 29580) * 0.30 + (29579 - 11601) * 0.11
