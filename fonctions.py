@@ -45,3 +45,24 @@ def mesImpots(salaire):
     elif salaire >= 181918:
         impot = (salaire - 181918) * 0.45 + (181917 - 84578) * 0.41 + (84577 - 29580) * 0.30 + (29579 - 11601) * 0.11
     return int(impot)
+
+def multiplication(m1, m2):
+    m3=[[0,0,0],[0,0,0],[0,0,0]]
+    for i in range(3):
+        for j in range(3):
+            for k in range(3):
+                print(i,j,k,m1[i][k]*m2[k][j], m1[i][k],m2[k][j])
+                m3[i][j]+=(m1[i][k]*m2[k][j])
+    return m3
+
+def multiplicationV2(m1, m2):
+    assert len(m1)==len(m2[0]), "Le nombre de colonnes de la première matrice doit être égal au nombre de lignes de la deuxième matrice"
+    m3 = [[0 for j in range(len(m2[0]))] for i in range(len(m1))]
+    for i in range(len(m1)):
+        for j in range(len(m2[0])):
+            for k in range(len(m2)):
+                print(i,j,k,m1[i][k]*m2[k][j], m1[i][k],m2[k][j])
+                m3[i][j]+=(m1[i][k]*m2[k][j])
+    return m3
+
+
